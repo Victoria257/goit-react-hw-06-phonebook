@@ -79,11 +79,11 @@ export function Form({ onSubmit, addContacts, contacts }) {
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   addContacts: PropTypes.func.isRequired,
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
+  // contacts: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     id: PropTypes.string.isRequired,
+  //     name: PropTypes.string.isRequired,
+  //     number: PropTypes.string.isRequired,
+  //   }).isRequired
+  // ).isRequired,
 };
