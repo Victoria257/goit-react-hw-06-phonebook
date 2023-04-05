@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setStatusFilter } from 'redux/filterSlice';
 
 const FilterContacts = () => {
-  const filter = useSelector(state => state.filters);
+  const filter = useSelector(state => state.filterContact.filters);
   const dispatch = useDispatch();
 
-  const onChange = filter => dispatch(setStatusFilter(filter));
+  const onChange = event => dispatch(setStatusFilter(event.target.value));
 
   return (
     <div className={css.filter}>
