@@ -1,12 +1,12 @@
 import css from 'components/Contact/Contact.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { delContact } from 'redux/contactsSlice';
+import PropTypes from 'prop-types';
 
 export const Contact = () => {
   const contacts = useSelector(state => state.contacts.contacts);
   const filterContact = useSelector(state => state.filterContact.filters);
-  console.log(filterContact);
-  console.log(contacts);
+
   const dispatch = useDispatch();
 
   const getVisibleContacts = () => {
@@ -16,6 +16,8 @@ export const Contact = () => {
   };
 
   const visibleContacts = getVisibleContacts();
+  console.log(useSelector);
+  console.log(delContact);
 
   return visibleContacts.map(({ name, number, id }) => (
     <li className={css.contact} key={id}>
@@ -29,4 +31,8 @@ export const Contact = () => {
       </button>
     </li>
   ));
+};
+
+Contact.propTypes = {
+  delContact: PropTypes.func.isRequired,
 };

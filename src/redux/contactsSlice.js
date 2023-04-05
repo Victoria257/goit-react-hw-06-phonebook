@@ -30,13 +30,9 @@ const contactsSlice = createSlice({
       );
       state.contacts.splice(index, 1);
     },
-
-    changeFilter: (state, action) => {
-      state.filterContact = action.payload.filterContact;
-    },
   },
 });
 
-export const { addContacts, delContact, changeFilter } = contactsSlice.actions;
+export const { addContacts, delContact } = contactsSlice.actions;
 
 export default contactsSlice.reducer;

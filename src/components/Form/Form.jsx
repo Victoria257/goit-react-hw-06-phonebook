@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import css from './Form.module.css';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-export function Form({ onSubmit, addContacts, contacts }) {
+export function Form({ onSubmit, addContacts }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const contacts = useSelector(state => state.contacts.contacts);
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -79,11 +82,4 @@ export function Form({ onSubmit, addContacts, contacts }) {
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   addContacts: PropTypes.func.isRequired,
-  // contacts: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     id: PropTypes.string.isRequired,
-  //     name: PropTypes.string.isRequired,
-  //     number: PropTypes.string.isRequired,
-  //   }).isRequired
-  // ).isRequired,
 };
