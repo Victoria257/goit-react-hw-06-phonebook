@@ -16,8 +16,6 @@ export const Contact = () => {
   };
 
   const visibleContacts = getVisibleContacts();
-  console.log(useSelector);
-  console.log(delContact);
 
   return visibleContacts.map(({ name, number, id }) => (
     <li className={css.contact} key={id}>
@@ -34,5 +32,5 @@ export const Contact = () => {
 };
 
 Contact.propTypes = {
-  delContact: PropTypes.func.isRequired,
+  delContact: PropTypes.func,
 };

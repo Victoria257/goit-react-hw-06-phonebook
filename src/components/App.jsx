@@ -25,5 +25,5 @@ function App() {
 export default App;
 
 App.propTypes = {
-  formSubmitHandler: PropTypes.func.isRequired,
+  formSubmitHandler: PropTypes.func,
 };
